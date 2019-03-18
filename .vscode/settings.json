@@ -1,0 +1,3 @@
+{
+  "bracketPairColorizer.consecutivePairColors": ["()", "[]", "{}", ["Red", "Blue", "Green"], "Red"]
+}
