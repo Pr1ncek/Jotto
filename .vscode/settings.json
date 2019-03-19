@@ -1,3 +1,10 @@
 {
-  "bracketPairColorizer.consecutivePairColors": ["()", "[]", "{}", ["Red", "Blue", "Green"], "Red"]
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    ["Red", "Blue", "Green"],
+    "Red"
+  ],
+  "prettier.printWidth": 80
 }
