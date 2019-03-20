@@ -1,11 +1,5 @@
 {
-  "bracketPairColorizer.consecutivePairColors": [
-    "()",
-    "[]",
-    "{}",
-    ["Red", "Blue", "Green"],
-    "Red"
-  ],
-  "prettier.printWidth": 80,
-  "editor.lineHeight": 30
+  "bracketPairColorizer.consecutivePairColors": ["()", "[]", "{}", ["Red", "Blue", "Green"], "Red"],
+  "prettier.printWidth": 100,
+  "editor.lineHeight": 32
 }
