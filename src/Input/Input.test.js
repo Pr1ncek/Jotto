@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { findByTestAttr, storeFactory } from '../../test/test-utils';
+import { findByTestAttr } from '../../test/test-utils';
 
 import { Input } from './Input';
 
@@ -17,14 +17,12 @@ const setup = (props = {}, state = null) => {
 };
 
 describe('renders correct content', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    const props = { success: false };
-    wrapper = setup(props);
-  });
-
   describe('when secret word has not been guessed', () => {
+    let wrapper;
+    beforeEach(() => {
+      const props = { success: false };
+      wrapper = setup(props);
+    });
     test('renders component without errors', () => {
       const component = findByTestAttr(wrapper, 'input-component');
       expect(component.length).toBe(1);
@@ -38,11 +36,24 @@ describe('renders correct content', () => {
       expect(button.length).toBe(1);
     });
   });
-
   describe('when secret word has been guessed', () => {
-    test('renders component without errors', () => {});
-    test('does not render input box', () => {});
-    test('does not render submit button', () => {});
+    let wrapper;
+    beforeEach(() => {
+      const props = { success: true };
+      wrapper = setup(props);
+    });
+    test('renders component without errors', () => {
+      const component = findByTestAttr(wrapper, 'input-component');
+      expect(component.length).toBe(1);
+    });
+    test('does not render input box', () => {
+      const input = findByTestAttr(wrapper, 'input-box');
+      expect(input.length).toBe(0);
+    });
+    test('does not render submit button', () => {
+      const button = findByTestAttr(wrapper, 'submit-button');
+      expect(button.length).toBe(0);
+    });
   });
 });
 

@@ -1,5 +1,5 @@
 import successReducer from './successReducer';
-import { actionTypes } from '../actions/index';
+import { actionTypes } from '../actions/actions';
 
 describe('returns false for `success` state', () => {
   const mockAction = { type: 'MOCK_ACTION' };

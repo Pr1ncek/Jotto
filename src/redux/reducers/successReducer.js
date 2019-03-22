@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/index';
+import { actionTypes } from '../actions/actions';
 
 const initialState = { success: false };
 
