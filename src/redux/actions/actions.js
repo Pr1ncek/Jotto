@@ -1,13 +1,18 @@
+import { getLetterMatchCount } from '../../helpers/helpers';
+
 export const actionTypes = {
-  CORRECT_GUESS: 'CORRECT_GUESS'
+  CORRECT_GUESS: 'CORRECT_GUESS',
+  NEW_GUESS: 'NEW_GUESS'
 };
 
 /**
- * @function correctGuess
- * @returns {object} - Action object with type `CORRECT_GUESS`
+ * Redux Thunk function that dispatches `NEW_GUESS` action and (conditionally) `CORRECT_GUESS` action.
+ * @param {string} guessedWord - Word guessed by the user
+ * @param {string} secretWord - Secret Word
+ * @returns {function} - Redux Thunk function
  */
-export const correctGuess = () => {
-  return {
-    type: actionTypes.CORRECT_GUESS
-  };
+export const guessWord = (guessedWord, secretWord) => dispatch => {
+  const letterMatchCount = getLetterMatchCount(guessedWord, secretWord);
+  dispatch({ type: actionTypes.NEW_GUESS, payload: { guessedWord, letterMatchCount } });
+  if (guessedWord === secretWord) dispatch({ type: actionTypes.CORRECT_GUESS });
 };
